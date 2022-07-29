@@ -5,7 +5,7 @@ with open("requirements.txt") as installation_requirements_file:
 
 setup(
     name="easypubsub",
-    version="0.1.0",
+    version="0.2.0",
     packages=["easypubsub"],
     url="https://github.com/matpompili/easypubsub",
     author="Matteo Pompili",
@@ -16,7 +16,7 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    description="TODO",
+    description="A simple wrapper around PyZMQ that provides an easy interface to Publish Subscribe.",
     install_requires=requirements,
     test_suite="tests",
     package_data={"": ["LICENSE"]},
