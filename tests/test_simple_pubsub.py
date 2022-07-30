@@ -1,7 +1,9 @@
 import time
+
+from easypubsub.proxy import Proxy
 from easypubsub.publisher import Publisher
 from easypubsub.subscriber import Subscriber
-from easypubsub.proxy import Proxy
+
 
 def test_simple_pubsub():
     """
@@ -17,11 +19,15 @@ def test_simple_pubsub():
     time.sleep(1.0)
 
     # Create a Publisher.
-    publisher = Publisher("test_publisher", PUBLISHERS_ADDRESS, default_topic="test_topic")
+    publisher = Publisher(
+        "test_publisher", PUBLISHERS_ADDRESS, default_topic="test_topic"
+    )
     publisher.publish("This is a first test message.")
 
     # Create a Subscriber.
-    subscriber = Subscriber("test_subscriber", SUBSCRIBERS_ADDRESS, topics="test_publisher.test_topic")
+    subscriber = Subscriber(
+        "test_subscriber", SUBSCRIBERS_ADDRESS, topics="test_publisher.test_topic"
+    )
 
     # Wait for connection to establish.
     time.sleep(1.0)
