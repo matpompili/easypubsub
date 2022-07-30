@@ -8,10 +8,10 @@ with open("README.md") as readme_file:
 
 setup(
     name="easypubsub",
-    version="0.2.0",
+    version="0.2.1",
     packages=["easypubsub"],
     url="https://github.com/matpompili/easypubsub",
-    
+
     author="Matteo Pompili",
     classifiers=[
         "Programming Language :: Python :: 3",

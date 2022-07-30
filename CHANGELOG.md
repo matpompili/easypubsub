@@ -8,7 +8,7 @@
 
 [Full Changelog](https://github.com/matpompili/easypubsub/compare/v0.2.1...v0.2.0)
 
-- Fixed a bug for Proxy, where it would not quit using CTRL-C in Windows.
+- Fixed a bug for Proxy, where it would not quit using CTRL-C on Windows.
 - Added `CHANGELOG.md` to the repository.
 - `Proxy` now runs in a separate thread, so it is non-blocking.
 - Created a few simple tests.
