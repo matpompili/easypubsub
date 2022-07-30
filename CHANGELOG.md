@@ -1,12 +1,12 @@
 # Changelog
 
-## [0.2.2](https://github.com/matpompili/easypubsub/tree/0.2.2) (Ureleased)
+## [v0.2.2](https://github.com/matpompili/easypubsub/tree/v0.2.2) (Ureleased)
 
-[Full Changelog](https://github.com/matpompili/easypubsub/compare/v0.2.1...0.2.2)
+[Full Changelog](https://github.com/matpompili/easypubsub/compare/main...v0.2.1)
 
-## [0.2.1](https://github.com/matpompili/easypubsub/tree/0.2.1) (2022-07-29)
+## [v0.2.1](https://github.com/matpompili/easypubsub/tree/v0.2.1) (2022-07-29)
 
-[Full Changelog](https://github.com/matpompili/easypubsub/compare/v0.2.0...0.2.1)
+[Full Changelog](https://github.com/matpompili/easypubsub/compare/v0.2.1...v0.2.0)
 
 - Fixed a bug for Proxy, where it would not quit using CTRL-C in Windows.
 - Added `CHANGELOG.md` to the repository.
