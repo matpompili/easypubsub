@@ -11,6 +11,7 @@ mypy = "~=0.971"
 black = "~=22.6"
 isort = "~=5.10"
 build = "~=0.8"
+pytest = "~=7.1"
 
 [requires]
 python_version = "3.8"

@@ -6,3 +6,5 @@
 
 - Fixed a bug for Proxy, where it would not quit using CTRL-C in Windows.
 - Added `CHANGELOG.md` to the repository.
+- `Proxy` now runs in a separate thread, so it is non-blocking.
+- Created a few simple tests.

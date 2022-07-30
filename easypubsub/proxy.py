@@ -1,4 +1,8 @@
+from threading import Thread
+from typing import Optional
+
 import zmq
+from zmq.devices import ThreadProxy
 from zmq.utils.win32 import allow_interrupt
 
 from easypubsub.logging import getLogger
@@ -37,20 +41,22 @@ class Proxy:
         )
         self.xsub_publisher_socket.bind(self.publishers_address)
 
-    def _stop_proxy(self) -> None:
+        self._proxy_thread: Optional[Thread] = None
+
+    def stop(self) -> None:
         """Fix CTRL-C on Windows."""
+
+        # self.ctx.term()
         self.xpub_subscriber_socket.close()
         self.xsub_publisher_socket.close()
-        self.ctx.term()
 
-    def launch(self) -> None:
-        """Launch the Proxy.
+        if self._proxy_thread is not None and self._proxy_thread.is_alive():
+            self._proxy_thread.join()
 
-        This method will block until the Proxy is closed with CTRL-C.
-        """
+    def _launch(self) -> None:
         _logger.info("Launching proxy.")
         try:
-            with allow_interrupt(self._stop_proxy):
+            with allow_interrupt(self.stop):
                 zmq.proxy(self.xpub_subscriber_socket, self.xsub_publisher_socket)
         except KeyboardInterrupt:
             _logger.info("Detected KeyboardInterrupt. Closing proxy and sockets.")
@@ -66,3 +72,12 @@ class Proxy:
             self.xsub_publisher_socket.close()
 
         _logger.info("Done.")
+
+    def launch(self) -> None:
+        """Launch the Proxy."""
+
+        if self._proxy_thread is not None:
+            _logger.warning("Proxy already launched.")
+        else:
+            self._proxy_thread = Thread(target=self._launch)
+            self._proxy_thread.start()
