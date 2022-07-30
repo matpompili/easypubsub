@@ -1,4 +1,5 @@
 import zmq
+from zmq.utils.win32 import allow_interrupt
 
 from easypubsub.logging import getLogger
 
@@ -36,14 +37,21 @@ class Proxy:
         )
         self.xsub_publisher_socket.bind(self.publishers_address)
 
+    def _stop_proxy(self) -> None:
+        """Fix CTRL-C on Windows."""
+        self.xpub_subscriber_socket.close()
+        self.xsub_publisher_socket.close()
+        self.ctx.term()
+
     def launch(self) -> None:
         """Launch the Proxy.
 
-        This method will block until the Proxy is closed.
+        This method will block until the Proxy is closed with CTRL-C.
         """
         _logger.info("Launching proxy.")
         try:
-            zmq.proxy(self.xpub_subscriber_socket, self.xsub_publisher_socket)
+            with allow_interrupt(self._stop_proxy):
+                zmq.proxy(self.xpub_subscriber_socket, self.xsub_publisher_socket)
         except KeyboardInterrupt:
             _logger.info("Detected KeyboardInterrupt. Closing proxy and sockets.")
             self.xpub_subscriber_socket.close()
