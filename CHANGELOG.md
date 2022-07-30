@@ -2,6 +2,9 @@
 
 ## [v0.2.2](https://github.com/matpompili/easypubsub/tree/v0.2.2) (Ureleased)
 
+- Added documentation to the `Proxy`, `Subscriber`, and `Publisher` classes.
+- Setup Sphinx documentation and Readthedocs.
+
 [Full Changelog](https://github.com/matpompili/easypubsub/compare/v0.2.1...main)
 
 ## [v0.2.1](https://github.com/matpompili/easypubsub/tree/v0.2.1) (2022-07-29)
