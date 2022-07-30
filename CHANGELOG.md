@@ -1,11 +1,12 @@
 # Changelog
 
-## [v0.2.2](https://github.com/matpompili/easypubsub/tree/v0.2.2) (Ureleased)
+## [v0.3.0](https://github.com/matpompili/easypubsub/tree/v0.3.0) (Ureleased)
 
 - Added documentation to the `Proxy`, `Subscriber`, and `Publisher` classes.
 - Setup Sphinx documentation and Readthedocs.
+- Breaking change: `easypubsub.Proxy` now expects first the address for the publishers and then the address for the subscribers, to make it easier to remember (pub-sub). Fixed tests and examples accordingly.
 
-[Full Changelog](https://github.com/matpompili/easypubsub/compare/v0.2.1...main)
+[Full Changelog](https://github.com/matpompili/easypubsub/compare/v0.2.1...v0.3.0)
 
 ## [v0.2.1](https://github.com/matpompili/easypubsub/tree/v0.2.1) (2022-07-29)
 
