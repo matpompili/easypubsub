@@ -8,7 +8,7 @@ from easypubsub.logging import getLogger
 
 
 class Subscriber:
-    """An interface to subscribe to one or more topics.
+    """The EasyPubSub Subscriber provides an interface to subscribe to one or more topics.
 
     Attributes:
         name (str): The name of the subscriber. This is used for logging purposes.
@@ -20,7 +20,7 @@ class Subscriber:
 
     Example:
         >>> from easypubsub.subscriber import Subscriber
-        >>> subscriber = Subscriber("my_subscriber", "tcp://localhost:5556")
+        >>> subscriber = Subscriber("my_subscriber", "tcp://127.0.0.1:5556")
         >>> subscriber.receive()
         [("my_publisher", "Hello world!"), ("my_publisher.my_topic", "Hello again, world.")]
     """

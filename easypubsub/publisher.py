@@ -21,7 +21,7 @@ class Publisher:
 
     Example:
         >>> from easypubsub.publisher import Publisher
-        >>> publisher = Publisher("my_publisher", "tcp://localhost:5555")
+        >>> publisher = Publisher("my_publisher", "tcp://127.0.0.1:5555")
         >>> publisher.publish("Hello world!")
         This messsage will be published to the topic "my_publisher"
         >>> publisher.publish("Hello again, world.", "my_topic")
