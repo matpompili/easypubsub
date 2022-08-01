@@ -2,10 +2,10 @@ import time
 
 from easypubsub.proxy import Proxy
 
-SUBSCRIBERS_ADDRESS = "tcp://127.0.0.1:5555"
-PUBLISHERS_ADDRESS = "tcp://127.0.0.1:5556"
+PUBLISHERS_ADDRESS = "tcp://127.0.0.1:5555"
+SUBSCRIBERS_ADDRESS = "tcp://127.0.0.1:5556"
 # Create a Proxy.
-proxy = Proxy(SUBSCRIBERS_ADDRESS, PUBLISHERS_ADDRESS)
+proxy = Proxy(PUBLISHERS_ADDRESS, SUBSCRIBERS_ADDRESS)
 proxy.launch()
 
 try:

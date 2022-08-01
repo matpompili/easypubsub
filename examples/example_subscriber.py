@@ -2,7 +2,7 @@ import time
 
 from easypubsub.subscriber import Subscriber
 
-SUBSCRIBERS_ADDRESS = "tcp://127.0.0.1:5555"
+SUBSCRIBERS_ADDRESS = "tcp://127.0.0.1:5556"
 
 subscriber = Subscriber(
     "test_subscriber", SUBSCRIBERS_ADDRESS, topics="test_publisher.test_topic"

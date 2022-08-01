@@ -2,7 +2,7 @@ import time
 
 from easypubsub.publisher import Publisher
 
-PUBLISHERS_ADDRESS = "tcp://127.0.0.1:5556"
+PUBLISHERS_ADDRESS = "tcp://127.0.0.1:5555"
 
 publisher = Publisher("test_publisher", PUBLISHERS_ADDRESS, default_topic="test_topic")
 publisher.publish("This is a test message.")
