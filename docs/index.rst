@@ -1,7 +1,4 @@
-Welcome to EasyPubSub's documentation!
-======================================
-
-**EasyPubSub** is a simple wrapper around PyZMQ that provides an easy interface to Publish Subscribe.
+.. mdinclude:: ../README.md
 
 Using this package
 ------------------

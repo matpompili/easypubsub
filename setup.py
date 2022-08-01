@@ -3,6 +3,9 @@ from setuptools import setup
 with open("requirements.txt") as installation_requirements_file:
     requirements = installation_requirements_file.read().splitlines()
 
+with open("requirements-dev.txt") as test_requirements_file:
+    test_requirements = test_requirements_file.read().splitlines()
+
 with open("README.md") as readme_file:
     readme = readme_file.read()
 
@@ -12,6 +15,7 @@ setup(
     packages=["easypubsub"],
     url="https://github.com/matpompili/easypubsub",
     author="Matteo Pompili",
+    python_requires=">=3.8",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
@@ -24,5 +28,6 @@ setup(
     long_description_content_type="text/markdown",
     install_requires=requirements,
     test_suite="tests",
+    tests_require=test_requirements,
     package_data={"": ["LICENSE"]},
 )
