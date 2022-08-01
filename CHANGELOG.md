@@ -4,6 +4,7 @@
 
 - Fix link in the pypi package description.
 - Fix missed release date for v0.3.0 in `CHANGELOG.md`.
+- Use MyST to include Markdown files in the docs instead of `m2r2`, which has security issues.
 
 [Full v0.3.1 Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.0...v0.3.1)
 
