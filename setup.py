@@ -10,9 +10,9 @@ with open("README.md") as readme_file:
     readme = readme_file.read()
 
 project_urls = {
-  'Home': 'https://github.com/matpompili/easypubsub',
-  'Documentation': 'https://easypubsub.readthedocs.io/',
-  'Changelog': 'https://github.com/matpompili/easypubsub/blob/main/CHANGELOG.md',
+    "Home": "https://github.com/matpompili/easypubsub",
+    "Documentation": "https://easypubsub.readthedocs.io/",
+    "Changelog": "https://github.com/matpompili/easypubsub/blob/main/CHANGELOG.md",
 }
 
 setup(
@@ -36,5 +36,5 @@ setup(
     test_suite="tests",
     tests_require=test_requirements,
     package_data={"": ["LICENSE"]},
-    project_urls = project_urls
+    project_urls=project_urls,
 )
