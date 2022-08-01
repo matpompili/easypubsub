@@ -2,7 +2,6 @@ from threading import Thread
 from typing import Optional
 
 import zmq
-from zmq.devices import ThreadProxy
 from zmq.utils.win32 import allow_interrupt
 
 from easypubsub.logging import getLogger
