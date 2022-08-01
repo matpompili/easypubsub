@@ -66,7 +66,7 @@ class Proxy:
         """Launch the Proxy.
 
         This method will launch the Proxy in a separate thread, and return immediately.
-        To stop the Proxy, call the `stop` method."""
+        To stop the Proxy, call the :meth:`Proxy.stop` method."""
 
         if self._proxy_thread is not None:
             _logger.warning("Proxy already launched.")

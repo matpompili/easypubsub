@@ -13,10 +13,10 @@ class Subscriber:
     Attributes:
         name (str): The name of the subscriber. This is used for logging purposes.
         proxy_subscribers_address (str): The address that the subscriber will use to
-            connect to the `Proxy`.
+            connect to the :obj:`~easypubsub.proxy.Proxy`.
         topics (str | List[str]): The topics to subscribe to. If not specified, the subscriber
             will subscribe to all topics. If specified, it can be a string or a list of strings.
-        receive_timeout (float): The timeout for receiving messages in the `receive` method.
+        receive_timeout (float): The timeout for receiving messages in the :meth:`receive` method.
 
     Example:
         >>> from easypubsub.subscriber import Subscriber
@@ -71,10 +71,10 @@ class Subscriber:
         time.sleep(1)
 
     def receive(self) -> List[Tuple[str, Any]]:
-        """Receive one or more messages from the proxy.
+        """Receive one or more messages from the subscriptions.
 
         Returns:
-            List[Tuple[str, Any]]: A list of tuples containing the topic and the message.
+            List[Tuple[str, Any]]: A list of tuples, each containing the topic and the message.
 
         Example:
             >>> subscriber.receive()

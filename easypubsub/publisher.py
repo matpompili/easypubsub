@@ -8,16 +8,16 @@ from easypubsub.logging import getLogger
 
 
 class Publisher:
-    """An interface to publish messages to a topic.
+    """The EasyPubSub Publisher provides an interface to publish messages to a topic.
 
     Attributes:
         name (str): The name of the publisher. This will be used as a prefix to
             all topics used by this publisher.
         proxy_publishers_address (str): The address that the publisher will use to
-            connect to the `Proxy`.
+            connect to the :obj:`~easypubsub.proxy.Proxy`.
         default_topic (str): The default topic to use when publishing messages.
-            default is "" (empty string), which means that the messages will be
-            published to the topic `name`.
+            By default, it uses "" (empty string), which means that the messages will be
+            published using :attr:`name` as the topic .
 
     Example:
         >>> from easypubsub.publisher import Publisher
@@ -52,8 +52,8 @@ class Publisher:
 
         Args:
             message (Any): The message to publish. This can be any type of data that can be pickled.
-            topic (Optional[str]): The topic to publish the message to. If not specified, the default
-                topic will be used.
+            topic (Optional[str]): The topic to publish the message to. If not specified, the 
+                :attr:`default_topic` will be used.
         """
         if topic is None:
             topic = self.default_topic

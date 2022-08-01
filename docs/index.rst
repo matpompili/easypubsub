@@ -3,19 +3,37 @@ Welcome to EasyPubSub's documentation!
 
 **EasyPubSub** is a simple wrapper around PyZMQ that provides an easy interface to Publish Subscribe.
 
+Using this package
+------------------
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+:doc:`usage`
+    A quick-start guide, including installation instructions
+
+:doc:`API <api>`
+    The full API documentation.
+
+
+:doc:`changelog`
+    Changelog for this project.
 
 .. note::
 
    This project is under active development.
 
-Contents
---------
+.. Hidden TOCs
 
 .. toctree::
+    :caption: Contents
+    :maxdepth: 2
+    :hidden:
 
-   Home <self>
-   usage
-   api
+    Home <self>
+    usage
+    changelog
+
+.. toctree::
+    :caption: API Reference
+    :maxdepth: 2
+    :hidden:
+
+    api

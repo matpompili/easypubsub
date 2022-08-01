@@ -1,7 +1,23 @@
-easypubsub
-==========
+easypubsub package
+==================
+.. automodule:: easypubsub
+   :members:
+   :undoc-members:
 
-.. toctree::
-   :maxdepth: 4
+proxy module
+------------
+.. automodule:: easypubsub.proxy
+   :members:
+   :undoc-members:
 
-   easypubsub
+publisher module
+----------------
+.. automodule:: easypubsub.publisher
+   :members:
+   :undoc-members:
+
+subscriber module
+-----------------
+.. automodule:: easypubsub.subscriber
+   :members:
+   :undoc-members:
