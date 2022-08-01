@@ -35,6 +35,9 @@ setup(
     install_requires=requirements,
     test_suite="tests",
     tests_require=test_requirements,
-    package_data={"": ["LICENSE"]},
+    package_data={
+        "": ["LICENSE"],
+        "easypubsub": ["py.typed"],
+    },
     project_urls=project_urls,
 )
