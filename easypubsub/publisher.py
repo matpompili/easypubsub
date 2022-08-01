@@ -52,7 +52,7 @@ class Publisher:
 
         Args:
             message (Any): The message to publish. This can be any type of data that can be pickled.
-            topic (Optional[str]): The topic to publish the message to. If not specified, the 
+            topic (Optional[str]): The topic to publish the message to. If not specified, the
                 :attr:`default_topic` will be used.
         """
         if topic is None:
