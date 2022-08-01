@@ -1,6 +1,13 @@
 # Changelog
 
-## [v0.3.0](https://github.com/matpompili/easypubsub/tree/v0.3.0) (Unreleased)
+## [v0.3.1](https://github.com/matpompili/easypubsub/tree/v0.3.1) (Unreleased)
+
+- Fix link in the pypi package description.
+- Fix missed release date for v0.3.0 in `CHANGELOG.md`.
+
+[Full v0.3.1 Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.0...v0.3.1)
+
+## [v0.3.0](https://github.com/matpompili/easypubsub/tree/v0.3.0) (2022-08-01)
 
 - Added documentation to the :obj:`~easypubsub.proxy.Proxy`, :obj:`~easypubsub.subscriber.Subscriber`, and :obj:`~easypubsub.publisher.Publisher` classes.
 - Setup Sphinx documentation and Readthedocs.
