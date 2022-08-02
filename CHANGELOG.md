@@ -4,6 +4,7 @@
 
 - Fix link in the pypi package description.
 - Fix missed release date for v0.3.0 in `CHANGELOG.md`.
+- Use MyST to include Markdown files in the docs instead of `m2r2`, which has security issues.
 - Add bump2version configuration, to manage the versioning.
 - Added `__version__` to the `easypubsub` package.
 
