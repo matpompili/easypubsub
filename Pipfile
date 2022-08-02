@@ -15,6 +15,7 @@ pytest = "~=7.1"
 Sphinx = "~=5.1"
 sphinx-rtd-theme = "~=1.0"
 myst-parser = "~=0.18"
+bump2version = "~=1.0"
 
 [requires]
 python_version = "3.8"
