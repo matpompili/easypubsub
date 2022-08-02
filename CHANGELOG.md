@@ -2,13 +2,17 @@
 
 ## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
+[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.1...main)
+
+## [v0.3.1](https://github.com/matpompili/easypubsub/tree/v0.3.1) (2022-08-02)
+
 - Fix link in the pypi package description.
 - Fix missed release date for v0.3.0 in `CHANGELOG.md`.
 - Use MyST to include Markdown files in the docs instead of `m2r2`, which has security issues.
 - Add bump2version configuration, to manage the versioning.
 - Added `__version__` to the `easypubsub` package.
 
-[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.0...main)
+[Full v0.3.1 Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.0...v0.3.1)
 
 ## [v0.3.0](https://github.com/matpompili/easypubsub/tree/v0.3.0) (2022-08-01)
 
