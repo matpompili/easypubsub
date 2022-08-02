@@ -1,11 +1,13 @@
 # Changelog
 
-## [v0.3.1](https://github.com/matpompili/easypubsub/tree/v0.3.1) (Unreleased)
+## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
 - Fix link in the pypi package description.
 - Fix missed release date for v0.3.0 in `CHANGELOG.md`.
+- Add bump2version configuration, to manage the versioning.
+- Added `__version__` to the `easypubsub` package.
 
-[Full v0.3.1 Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.0...v0.3.1)
+[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.0...main)
 
 ## [v0.3.0](https://github.com/matpompili/easypubsub/tree/v0.3.0) (2022-08-01)
 
