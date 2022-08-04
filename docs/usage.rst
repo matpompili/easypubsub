@@ -61,7 +61,7 @@ As you can imagine, subscribing is very similar to publishing! In the example be
    :emphasize-lines: 6, 10
 
 When calling :meth:`~easypubsub.subscriber.Subscriber.receive`, a list of *publications* is returned (all the ones collected since the last call).
-Each publication is a tuple of the form ``(topic, message)``, for example ``(lottery.winning_number, 42)``.
+Each publication is a tuple of the form ``(topic, message)``, for example ``("lottery.winning_number", 42)``.
 
 EasyPubSub over a LAN
 ---------------------
