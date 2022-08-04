@@ -35,12 +35,12 @@ class Proxy:
         )
 
         self.publishers_address = publishers_address
-        self.subcribers_address = subscribers_address
+        self.subscribers_address = subscribers_address
 
         self._proxy.bind_out(self.publishers_address)
-        self._proxy.bind_in(self.subcribers_address)
+        self._proxy.bind_in(self.subscribers_address)
         _logger.info(
-            f"Proxy bound to {self.publishers_address} for publishers and {self.subcribers_address} for subscribers."
+            f"Proxy bound to {self.publishers_address} for publishers and {self.subscribers_address} for subscribers."
         )
 
         self._ctrl_iface = "tcp://127.0.0.1"
@@ -66,7 +66,7 @@ class Proxy:
         """
 
         self._ctrl_socket.connect(f"{self._ctrl_iface}:{self._ctrl_port}")
-        # Wait for the control socket to eastablish a connection with the Proxy.
+        # Wait for the control socket to establish a connection with the Proxy.
         time.sleep(0.25)
 
         self._ctrl_socket.send(b"TERMINATE")

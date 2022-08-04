@@ -1,5 +1,4 @@
 import pickle
-import time
 from typing import Any, List, Tuple, Union
 
 import zmq
@@ -67,8 +66,6 @@ class Subscriber:
 
         self.poller = zmq.Poller()
         self.poller.register(self.socket, zmq.POLLIN)
-
-        time.sleep(1)
 
     def receive(self) -> List[Tuple[str, Any]]:
         """Receive one or more messages from the subscriptions.

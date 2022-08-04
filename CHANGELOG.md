@@ -4,6 +4,8 @@
 
 - Update :obj:`~easypubsub.proxy.Proxy` to use `zmq.devices.ThreadProxySteerable`, which supports better termination handling.
 - Improve documentation and update example scripts.
+- Fixed some typos in the documentation and variables names.
+- Removed wait times in :obj:`~easypubsub.proxy.Proxy` and :obj:`~easypubsub.subscriber.Subscriber`, the user should take care of waiting long enough to establish the connection.
 
 [Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.1...main)
 
