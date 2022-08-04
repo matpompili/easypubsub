@@ -3,10 +3,7 @@ import time
 from easypubsub.subscriber import Subscriber
 
 SUBSCRIBERS_ADDRESS = "tcp://127.0.0.1:5556"
-
-subscriber = Subscriber(
-    "test_subscriber", SUBSCRIBERS_ADDRESS, topics="test_publisher.test_topic"
-)
+subscriber = Subscriber("lottery_player", SUBSCRIBERS_ADDRESS)
 
 try:
     while True:
@@ -16,7 +13,7 @@ try:
             for topic, message in result:
                 print(f"{topic}: {message}")
         else:
+            # No message received.
             time.sleep(1.0)
-            # print("No message received.")
 except KeyboardInterrupt:
     pass
