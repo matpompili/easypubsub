@@ -1,8 +1,7 @@
-from threading import Thread
-from typing import Optional
+import time
 
 import zmq
-from zmq.utils.win32 import allow_interrupt
+import zmq.devices
 
 from easypubsub.logging import getLogger
 
@@ -30,36 +29,23 @@ class Proxy:
         subscribers_address: str,
     ) -> None:
         self.ctx = zmq.Context.instance()
+
+        self._proxy = zmq.devices.ThreadProxySteerable(
+            in_type=zmq.XPUB, out_type=zmq.XSUB, ctrl_type=zmq.PAIR
+        )
+
         self.publishers_address = publishers_address
-        self.subcriber_address = subscribers_address
+        self.subcribers_address = subscribers_address
 
-        _logger.info("Creating socket for publishers.")
-        self.xsub_publisher_socket = self.ctx.socket(zmq.XSUB)
+        self._proxy.bind_out(self.publishers_address)
+        self._proxy.bind_in(self.subcribers_address)
         _logger.info(
-            "Binding socket for publishers to {}.".format(self.publishers_address)
+            f"Proxy bound to {self.publishers_address} for publishers and {self.subcribers_address} for subscribers."
         )
-        self.xsub_publisher_socket.bind(self.publishers_address)
 
-        _logger.info("Creating socket for subscribers.")
-        self.xpub_subscriber_socket = self.ctx.socket(zmq.XPUB)
-        _logger.info(
-            "Binding socket for subscribers to {}.".format(self.subcriber_address)
-        )
-        self.xpub_subscriber_socket.bind(self.subcriber_address)
-
-        self._proxy_thread: Optional[Thread] = None
-
-    def _launch(self) -> None:
-        _logger.info("Launching proxy.")
-        try:
-            with allow_interrupt(self.stop):
-                zmq.proxy(self.xpub_subscriber_socket, self.xsub_publisher_socket)
-        except (KeyboardInterrupt, zmq.error.ContextTerminated, zmq.error.ZMQError):
-            _logger.info("Closing proxy and sockets.")
-            self.xpub_subscriber_socket.close()
-            self.xsub_publisher_socket.close()
-
-        _logger.info("Done.")
+        self._ctrl_iface = "tcp://127.0.0.1"
+        self._ctrl_port = self._proxy.bind_ctrl_to_random_port(self._ctrl_iface)
+        self._ctrl_socket = self.ctx.socket(zmq.PAIR)
 
     def launch(self) -> None:
         """Launch the Proxy.
@@ -67,17 +53,23 @@ class Proxy:
         This method will launch the Proxy in a separate thread, and return immediately.
         To stop the Proxy, call the :meth:`Proxy.stop` method."""
 
-        if self._proxy_thread is not None:
-            _logger.warning("Proxy already launched.")
-        else:
-            self._proxy_thread = Thread(target=self._launch)
-            self._proxy_thread.start()
+        self._proxy.start()
+        _logger.info("Proxy started.")
 
-    def stop(self) -> None:
-        """Stop the Proxy thread."""
+    def stop(self, timeout=5.0) -> None:
+        """Stop the Proxy thread.
 
-        self.xpub_subscriber_socket.close()
-        self.xsub_publisher_socket.close()
+        Args:
+            timeout (float): The maximum time to wait for the Proxy to stop. If the
+                Proxy does not stop cleanly within this time, it will be terminated
+                forcefully.
+        """
 
-        if self._proxy_thread is not None and self._proxy_thread.is_alive():
-            self._proxy_thread.join()
+        self._ctrl_socket.connect(f"{self._ctrl_iface}:{self._ctrl_port}")
+        time.sleep(0.25)
+        self._ctrl_socket.send(b"TERMINATE")
+        _logger.info(
+            f"Requesting termination of proxy. Will wait up to {timeout} seconds."
+        )
+        self._proxy.join(timeout=timeout)
+        _logger.info("Proxy terminated.")
