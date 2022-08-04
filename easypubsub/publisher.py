@@ -1,5 +1,4 @@
 import pickle
-import time
 from typing import Any, Optional
 
 import zmq
@@ -23,7 +22,7 @@ class Publisher:
         >>> from easypubsub.publisher import Publisher
         >>> publisher = Publisher("my_publisher", "tcp://127.0.0.1:5555")
         >>> publisher.publish("Hello world!")
-        This messsage will be published to the topic "my_publisher"
+        This message will be published to the topic "my_publisher"
         >>> publisher.publish("Hello again, world.", "my_topic")
         This message will be published to the topic "my_publisher.my_topic"
     """
@@ -44,8 +43,6 @@ class Publisher:
         self.socket = self.ctx.socket(zmq.PUB)
         self._logger.info(f"Connecting to {self.publishers_address}.")
         self.socket.connect(self.publishers_address)
-
-        time.sleep(1)
 
     def publish(self, message: Any, topic: Optional[str] = None) -> None:
         """Publish a message to a topic.

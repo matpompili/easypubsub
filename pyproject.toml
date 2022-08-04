@@ -8,7 +8,7 @@ target-version = ['py38']
 [tool.isort]
 profile = "black"
 multi_line_output = 3
-src_paths = ["easypubsub", "tests"]
+src_paths = ["easypubsub", "tests", "examples"]
 
 [tool.mypy]
 warn_return_any = true

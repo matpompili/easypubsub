@@ -1,4 +1,4 @@
-.. include:: ../README.md
+.. include:: short_readme.md
     :parser: myst_parser.sphinx_
 
 Using this package
