@@ -3,6 +3,7 @@
 ## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
 - Update :obj:`~easypubsub.proxy.Proxy` to use `zmq.devices.ThreadProxySteerable`, which supports better termination handling.
+- Improve documentation and update example scripts.
 
 [Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.1...main)
 

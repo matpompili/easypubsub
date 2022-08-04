@@ -7,7 +7,7 @@
 
 **EasyPubSub** is a simple wrapper around [PyZMQ](https://pyzmq.readthedocs.io/en/latest/) that provides an easy interface to the *PubSub* (Publish-Subscribe) functionality of [ZeroMQ](https://zeromq.org/). 
 
-In *PubSub*, a *publisher* publishes a message to a *topic* and a *subscriber* subscribes to that topic and receives the message. Publishers and subscribers connect to each other via a proxy, which acts as intermediary between them.
+In PubSub, a *publisher* publishes a message to a *topic* and a *subscriber* subscribes to that topic and receives the message. In EasyPubSub, publishers and subscribers connect to each other via a *proxy*, which acts as intermediary between them.
 For more information regarding *PubSub*, see [Wikipedia](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern).
 
 ## Get started
@@ -29,7 +29,7 @@ from easypubsub.proxy import Proxy
 
 PUBLISHERS_ADDRESS = "tcp://127.0.0.1:5555"
 SUBSCRIBERS_ADDRESS = "tcp://127.0.0.1:5556"
-# Create a Proxy.
+
 proxy = Proxy(PUBLISHERS_ADDRESS, SUBSCRIBERS_ADDRESS)
 proxy.launch()
 
