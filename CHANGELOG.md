@@ -2,12 +2,17 @@
 
 ## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
+[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.0...main)
+
+## [v0.4.0](https://github.com/matpompili/easypubsub/tree/v0.4.0) (2022-08-04)
+
 - Update :obj:`~easypubsub.proxy.Proxy` to use `zmq.devices.ThreadProxySteerable`, which supports better termination handling.
 - Improve documentation and update example scripts.
 - Fixed some typos in the documentation and variables names.
 - Removed wait times in :obj:`~easypubsub.proxy.Proxy` and :obj:`~easypubsub.subscriber.Subscriber`, the user should take care of waiting long enough to establish the connection.
 
-[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.1...main)
+[Full v0.4.0 Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.1...v0.4.0)
+
 
 ## [v0.3.1](https://github.com/matpompili/easypubsub/tree/v0.3.1) (2022-08-02)
 
