@@ -48,6 +48,21 @@ If any connection is lost (for example because the proxy is restarted), the publ
 While in this case the publisher is sending a simple integer as message, 
 the message can be any Python object that can be `pickled <https://docs.python.org/3/library/pickle.html>`_. For example lists, dictionaries, numpy arrays, etc.
 
+Publishing using the ``publish_this`` decorator
++++++++++++++++++++++++++++++++++++++++++++++++
+
+Often, one wants to publish the result of a function every time that function is called.
+EasyPubSub provides a decorator, :obj:`~easypubsub.publisher.publish_this`, that can be used to automatically publish the result of a function call.
+
+.. literalinclude:: ../examples/example_decorator.py
+   :caption: examples/example_decorator.py
+   :language: python
+   :linenos:
+   :emphasize-lines: 10-13
+
+In the example above, every time ``my_random_number_generator`` is called, the result is published to the topic ``lottery.winning_number``.
+A :obj:`~easypubsub.publisher.Publisher` is built and managed automatically by the decorator.
+
 Subscribing
 -----------
 

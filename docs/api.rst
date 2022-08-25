@@ -21,3 +21,10 @@ subscriber module
 .. automodule:: easypubsub.subscriber
    :members:
    :undoc-members:
+
+decorator module
+-----------------
+.. automodule:: easypubsub.decorator
+   :members:
+   :undoc-members:
+
