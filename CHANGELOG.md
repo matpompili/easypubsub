@@ -2,9 +2,14 @@
 
 ## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
+
+[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.1...main)
+
+## [v0.4.1](https://github.com/matpompili/easypubsub/tree/v0.4.1)
+
 - Added safer exception handling for the `publish` method of :obj:`~easypubsub.publisher.Publisher`.
 
-[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.0...main)
+[Full v0.4.1 Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.0...v0.4.1)
 
 ## [v0.4.0](https://github.com/matpompili/easypubsub/tree/v0.4.0) (2022-08-04)
 
