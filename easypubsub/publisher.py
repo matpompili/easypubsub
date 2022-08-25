@@ -62,5 +62,5 @@ class Publisher:
         try:
             pickled_message = pickle.dumps(message)
             self.socket.send_multipart([topic.encode("utf-8"), pickled_message])
-        except:
+        except Exception:
             self._logger.exception("Could not publish message. See traceback.")
