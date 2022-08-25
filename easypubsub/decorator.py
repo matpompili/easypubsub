@@ -1,7 +1,7 @@
 from easypubsub.publisher import Publisher
 
 
-class publish_this():
+class publish_this:
     """
     Decorator for publishing values returned by functions.
     See :obj:`~easypubsub.publisher.Publisher` for more information about the arguments.
@@ -13,7 +13,8 @@ class publish_this():
         ...
         >>> my_random_number_generator()  # This just got published to the topic "lottery.winning_number"
     """
-    def __init__(self, name:str, topic:str, address:str):
+
+    def __init__(self, name: str, topic: str, address: str):
         self.name = name
         self.topic = topic
         self.address = address
@@ -25,4 +26,5 @@ class publish_this():
             result = func(*args, **kwargs)
             self.publisher.publish(result)
             return result
+
         return wrapper
