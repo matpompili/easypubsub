@@ -87,3 +87,60 @@ def test_many_final_dots():
         "This message should be delivered even if the topic ends with many dots.",
     )
     proxy.stop()
+
+
+def test_subscribe_to_all_topics():
+    proxy = Proxy(PUBLISHERS_ADDRESS, SUBSCRIBERS_ADDRESS)
+    proxy.launch()
+
+    subscriber = Subscriber("test_subscriber", SUBSCRIBERS_ADDRESS)
+
+    publisher_1 = Publisher(
+        "test_publisher_1", PUBLISHERS_ADDRESS, default_topic="test_topic_1"
+    )
+    publisher_2 = Publisher(
+        "test_publisher_2", PUBLISHERS_ADDRESS, default_topic="test_topic_2"
+    )
+    time.sleep(0.2)
+
+    publisher_1.publish("This is a message.")
+    publisher_2.publish("This is another message.")
+    messages = subscriber.receive()
+    assert len(messages) == 2
+    proxy.stop()
+
+
+def test_subscribe_to_some_topics():
+    proxy = Proxy(PUBLISHERS_ADDRESS, SUBSCRIBERS_ADDRESS)
+    proxy.launch()
+
+    subscriber = Subscriber(
+        "test_subscriber",
+        SUBSCRIBERS_ADDRESS,
+        topics=[
+            "test_publisher_1",
+            "test_publisher_4",
+        ],
+    )
+
+    publisher_1 = Publisher(
+        "test_publisher_1", PUBLISHERS_ADDRESS, default_topic="test_topic_1"
+    )
+    publisher_2 = Publisher(
+        "test_publisher_2", PUBLISHERS_ADDRESS, default_topic="test_topic_2"
+    )
+    publisher_3 = Publisher(
+        "test_publisher_3", PUBLISHERS_ADDRESS, default_topic="test_topic_3"
+    )
+    publisher_4 = Publisher(
+        "test_publisher_4", PUBLISHERS_ADDRESS, default_topic="test_topic_4"
+    )
+    time.sleep(0.2)
+
+    publisher_1.publish("This is a message.")
+    publisher_2.publish("This is another message.")
+    publisher_3.publish("This is a third message.")
+    publisher_4.publish("This is a fourth message.")
+    messages = subscriber.receive()
+    assert len(messages) == 2
+    proxy.stop()
