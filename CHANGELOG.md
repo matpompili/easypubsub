@@ -21,7 +21,6 @@
 
 [Full v0.4.0 Changelog](https://github.com/matpompili/easypubsub/compare/v0.3.1...v0.4.0)
 
-
 ## [v0.3.1](https://github.com/matpompili/easypubsub/tree/v0.3.1) (2022-08-02)
 
 -   Fix link in the pypi package description.
