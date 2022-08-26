@@ -4,6 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/matpompili/easypubsub/blob/main/LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Tests](https://github.com/matpompili/easypubsub/actions/workflows/python-package.yml/badge.svg)](https://github.com/matpompili/easypubsub/actions/workflows/python-package.yml)
+[![Codacy Code Quality](https://app.codacy.com/project/badge/Grade/80f24926df804a108a568ca640352bd8)](https://www.codacy.com/gh/matpompili/easypubsub/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=matpompili/easypubsub&amp;utm_campaign=Badge_Grade)
+[![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/80f24926df804a108a568ca640352bd8)](https://www.codacy.com/gh/matpompili/easypubsub/dashboard?utm_source=github.com&utm_medium=referral&utm_content=matpompili/easypubsub&utm_campaign=Badge_Coverage)
 
 **EasyPubSub** is a simple wrapper around [PyZMQ](https://pyzmq.readthedocs.io/en/latest/) that provides an easy interface to the *PubSub* (Publish-Subscribe) functionality of [ZeroMQ](https://zeromq.org/). 
 
