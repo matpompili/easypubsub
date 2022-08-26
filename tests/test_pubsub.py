@@ -37,6 +37,7 @@ def test_simple_pubsub():
     # Stop the Proxy.
     proxy.stop()
 
+
 def test_final_dot_topic():
     # Create a Proxy.
     proxy = Proxy(PUBLISHERS_ADDRESS, SUBSCRIBERS_ADDRESS)
@@ -51,11 +52,17 @@ def test_final_dot_topic():
     )
     time.sleep(0.2)
 
-    publisher.publish("This message should be delivered even if the topic ends with a dot.")
+    publisher.publish(
+        "This message should be delivered even if the topic ends with a dot."
+    )
     messages = subscriber.receive()
     assert len(messages) == 1
-    assert messages[0] == ("test_publisher.test_topic", "This message should be delivered even if the topic ends with a dot.")
+    assert messages[0] == (
+        "test_publisher.test_topic",
+        "This message should be delivered even if the topic ends with a dot.",
+    )
     proxy.stop()
+
 
 def test_many_final_dots():
     proxy = Proxy(PUBLISHERS_ADDRESS, SUBSCRIBERS_ADDRESS)
@@ -70,8 +77,13 @@ def test_many_final_dots():
     )
     time.sleep(0.2)
 
-    publisher.publish("This message should be delivered even if the topic ends with many dots.")
+    publisher.publish(
+        "This message should be delivered even if the topic ends with many dots."
+    )
     messages = subscriber.receive()
     assert len(messages) == 1
-    assert messages[0] == ("test_publisher.test_topic", "This message should be delivered even if the topic ends with many dots.")
+    assert messages[0] == (
+        "test_publisher.test_topic",
+        "This message should be delivered even if the topic ends with many dots.",
+    )
     proxy.stop()
