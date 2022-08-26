@@ -18,7 +18,6 @@ def test_publish_unpicklability():
     publisher = Publisher(
         "test_publisher", PUBLISHERS_ADDRESS, default_topic="test_topic"
     )
-    
     publisher.publish("This is a first test message.")
 
     with pytest.raises(AttributeError, match=PICKLING_ERROR_STRING):
