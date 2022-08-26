@@ -1,0 +1,43 @@
+import time
+
+from easypubsub.decorator import publish_this
+from easypubsub.proxy import Proxy
+from easypubsub.subscriber import Subscriber
+
+
+def test_simple_pubsub():
+    """
+    Test the simple Publish/Subscribe functionality.
+    """
+
+    PUBLISHERS_ADDRESS = "tcp://127.0.0.1:5555"
+    SUBSCRIBERS_ADDRESS = "tcp://127.0.0.1:5556"
+
+    # Create a Proxy.
+    proxy = Proxy(PUBLISHERS_ADDRESS, SUBSCRIBERS_ADDRESS)
+    proxy.launch()
+    time.sleep(1.0)
+
+    @publish_this(name="test_publisher", topic="test_topic", address=PUBLISHERS_ADDRESS)
+    def publish_a_message(extra: str):
+        return f"This the {extra} message"
+
+    publish_a_message("first")
+
+    # Create a Subscriber.
+    subscriber = Subscriber(
+        "test_subscriber", SUBSCRIBERS_ADDRESS, topics="test_publisher.test_topic"
+    )
+
+    # Wait for connection to establish.
+    time.sleep(1.0)
+    publish_a_message("second")
+    messages = subscriber.receive()
+    assert len(messages) == 1
+    assert messages[0] == ("test_publisher.test_topic", "This the second message")
+
+    publish_a_message("new first")
+    messages = subscriber.receive()
+    assert messages[0] == ("test_publisher.test_topic", "This the new first message")
+    # Stop the Proxy.
+    proxy.stop()
