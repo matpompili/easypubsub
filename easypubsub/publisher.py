@@ -64,3 +64,4 @@ class Publisher:
             self.socket.send_multipart([topic.encode("utf-8"), pickled_message])
         except Exception:
             self._logger.exception("Could not publish message. See traceback.")
+            raise

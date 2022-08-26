@@ -4,15 +4,14 @@ from easypubsub.decorator import publish_this
 from easypubsub.proxy import Proxy
 from easypubsub.subscriber import Subscriber
 
+PUBLISHERS_ADDRESS = "tcp://127.0.0.1:5555"
+SUBSCRIBERS_ADDRESS = "tcp://127.0.0.1:5556"
+
 
 def test_simple_pubsub():
     """
     Test the simple Publish/Subscribe functionality.
     """
-
-    PUBLISHERS_ADDRESS = "tcp://127.0.0.1:5555"
-    SUBSCRIBERS_ADDRESS = "tcp://127.0.0.1:5556"
-
     # Create a Proxy.
     proxy = Proxy(PUBLISHERS_ADDRESS, SUBSCRIBERS_ADDRESS)
     proxy.launch()
