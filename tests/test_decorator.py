@@ -28,14 +28,16 @@ def test_simple_pubsub():
     )
 
     # Wait for connection to establish.
-    time.sleep(0.2)
+    time.sleep(1.0)
     publish_a_message("second")
     messages = subscriber.receive()
+    time.sleep(1.0)  # Give some time for the messages to be received.
     assert len(messages) == 1
     assert messages[0] == ("test_publisher.test_topic", "This the second message")
 
     publish_a_message("new first")
     messages = subscriber.receive()
+    time.sleep(1.0)  # Give some time for the messages to be received.
     assert messages[0] == ("test_publisher.test_topic", "This the new first message")
     # Stop the Proxy.
     proxy.stop()

@@ -29,9 +29,10 @@ def test_simple_pubsub():
     )
 
     # Wait for connection to establish.
-    time.sleep(0.2)
+    time.sleep(1.0)
     publisher.publish("This is a second test message.")
     messages = subscriber.receive()
+    time.sleep(1.0)  # Give some time for the messages to be received.
     assert len(messages) == 1
 
     # Stop the Proxy.
@@ -50,12 +51,13 @@ def test_final_dot_topic():
     publisher = Publisher(
         "test_publisher", PUBLISHERS_ADDRESS, default_topic="test_topic."
     )
-    time.sleep(0.2)
+    time.sleep(1.0)
 
     publisher.publish(
         "This message should be delivered even if the topic ends with a dot."
     )
     messages = subscriber.receive()
+    time.sleep(1.0)  # Give some time for the messages to be received.
     assert len(messages) == 1
     assert messages[0] == (
         "test_publisher.test_topic",
@@ -75,12 +77,13 @@ def test_many_final_dots():
     publisher = Publisher(
         "test_publisher", PUBLISHERS_ADDRESS, default_topic="test_topic...."
     )
-    time.sleep(0.2)
+    time.sleep(1.0)
 
     publisher.publish(
         "This message should be delivered even if the topic ends with many dots."
     )
     messages = subscriber.receive()
+    time.sleep(1.0)  # Give some time for the messages to be received.
     assert len(messages) == 1
     assert messages[0] == (
         "test_publisher.test_topic",
@@ -101,11 +104,12 @@ def test_subscribe_to_all_topics():
     publisher_2 = Publisher(
         "test_publisher_2", PUBLISHERS_ADDRESS, default_topic="test_topic_2"
     )
-    time.sleep(0.2)
+    time.sleep(1.0)
 
     publisher_1.publish("This is a message.")
     publisher_2.publish("This is another message.")
     messages = subscriber.receive()
+    time.sleep(1.0)  # Give some time for the messages to be received.
     assert len(messages) == 2
     proxy.stop()
 
@@ -135,12 +139,13 @@ def test_subscribe_to_some_topics():
     publisher_4 = Publisher(
         "test_publisher_4", PUBLISHERS_ADDRESS, default_topic="test_topic_4"
     )
-    time.sleep(0.2)
+    time.sleep(1.0)
 
     publisher_1.publish("This is a message.")
     publisher_2.publish("This is another message.")
     publisher_3.publish("This is a third message.")
     publisher_4.publish("This is a fourth message.")
     messages = subscriber.receive()
+    time.sleep(1.0)  # Give some time for the messages to be received.
     assert len(messages) == 2
     proxy.stop()
