@@ -15,7 +15,6 @@ def test_simple_pubsub():
     # Create a Proxy.
     proxy = Proxy(PUBLISHERS_ADDRESS, SUBSCRIBERS_ADDRESS)
     proxy.launch()
-    time.sleep(1.0)
 
     @publish_this(name="test_publisher", topic="test_topic", address=PUBLISHERS_ADDRESS)
     def publish_a_message(extra: str):
@@ -29,7 +28,7 @@ def test_simple_pubsub():
     )
 
     # Wait for connection to establish.
-    time.sleep(1.0)
+    time.sleep(0.2)
     publish_a_message("second")
     messages = subscriber.receive()
     assert len(messages) == 1
