@@ -2,12 +2,16 @@
 
 ## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
+[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.2...main)
+
+## [v0.4.2](https://github.com/matpompili/easypubsub/tree/v0.4.2) (2022-09-01)
+
 -   Add :obj:`~easypubsub.decorator.publish_this` decorator to automatically publish function return values to a topic.
 -   Make `requirements.txt` less strict.
 
-[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.1...main)
+[Full v0.4.2 Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.1...v0.4.2)
 
-## [v0.4.1](https://github.com/matpompili/easypubsub/tree/v0.4.1)
+## [v0.4.1](https://github.com/matpompili/easypubsub/tree/v0.4.1) (2022-08-25)
 
 -   Added safer exception handling for the `publish` method of :obj:`~easypubsub.publisher.Publisher`.
 
