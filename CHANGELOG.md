@@ -3,6 +3,7 @@
 ## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
 -   Add :obj:`~easypubsub.decorator.publish_this` decorator to automatically publish function return values to a topic.
+-   Make `requirements.txt` less strict.
 
 [Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.1...main)
 
