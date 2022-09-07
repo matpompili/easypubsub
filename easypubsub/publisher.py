@@ -7,7 +7,7 @@ from easypubsub.logging import getLogger
 
 
 class Publisher:
-    """The EasyPubSub Publisher provides an interface to publish messages to a topic.
+    """The easypubsub Publisher provides an interface to publish messages to a topic.
 
     Attributes:
         name (str): The name of the publisher. This will be used as a prefix to
@@ -34,7 +34,7 @@ class Publisher:
         self.default_topic = default_topic
         self.name = name
 
-        self._logger = getLogger(f"EasyPubSub.Publisher({name})")
+        self._logger = getLogger(f"easypubsub.Publisher({name})")
         self._connect()
 
     def _connect(self) -> None:

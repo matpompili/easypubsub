@@ -6,7 +6,7 @@ Usage
 Installation
 ------------
 
-To use EasyPubSub, first install it using pip:
+To use easypubsub, first install it using pip:
 
 .. code-block:: console
 
@@ -15,8 +15,8 @@ To use EasyPubSub, first install it using pip:
 Starting a Proxy
 ----------------
 
-EasyPubSub uses a single, central :obj:`~easypubsub.proxy.Proxy` as an intermediary between publishers and subscribers.
-A proxy is not required by the underlying library (ZeroMQ), but it is for EasyPubSub. This is to simplify setup and usage for users.
+easypubsub uses a single, central :obj:`~easypubsub.proxy.Proxy` as an intermediary between publishers and subscribers.
+A proxy is not required by the underlying library (ZeroMQ), but it is for easypubsub. This is to simplify setup and usage for users.
 The job of the proxy is to forward messages between publishers and subscribers, without them having to directly connect with each other.
 
 .. literalinclude:: ../examples/example_proxy.py
@@ -30,7 +30,7 @@ The proxy will accept connections from publishers on ``PUBLISHERS_ADDRESS`` and 
 Publishing
 ----------
 
-An EasyPubSub :obj:`~easypubsub.publisher.Publisher` is used to publish data over the network. In the example below, a publisher called 
+An easypubsub :obj:`~easypubsub.publisher.Publisher` is used to publish data over the network. In the example below, a publisher called 
 ``lottery``, publishes random numbers to the topic ``winning_number`` every ten seconds. The publishing can happen regardless of the presence 
 of any subscribers, or even of the proxy. Once the proxy is running, the publisher will establish connection and push data to the proxy.
 If any connection is lost (for example because the proxy is restarted), the publisher will reconnect automatically.
@@ -52,7 +52,7 @@ Publishing using the ``publish_this`` decorator
 +++++++++++++++++++++++++++++++++++++++++++++++
 
 Often, one wants to publish the result of a function every time that function is called.
-EasyPubSub provides a decorator, :obj:`~easypubsub.publisher.publish_this`, that can be used to automatically publish the result of a function call.
+easypubsub provides a decorator, :obj:`~easypubsub.publisher.publish_this`, that can be used to automatically publish the result of a function call.
 
 .. literalinclude:: ../examples/example_decorator.py
    :caption: examples/example_decorator.py
@@ -78,8 +78,8 @@ As you can imagine, subscribing is very similar to publishing! In the example be
 When calling :meth:`~easypubsub.subscriber.Subscriber.receive`, a list of *publications* is returned (all the ones collected since the last call).
 Each publication is a tuple of the form ``(topic, message)``, for example ``("lottery.winning_number", 42)``.
 
-EasyPubSub over a LAN
+easypubsub over a LAN
 ---------------------
 
-So far EasyPubSub has only been tested to connect python instances in a single machine (`localhost`), but as long as 
+So far easypubsub has only been tested to connect python instances in a single machine (`localhost`), but as long as 
 the network is configured correctly (port forwarding etc.), it should be possible to connect to other machines.

@@ -2,6 +2,8 @@
 
 ## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
+-   Rename EasyPubSub to easypubsub everywhere in the code.
+
 [Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.2...main)
 
 ## [v0.4.2](https://github.com/matpompili/easypubsub/tree/v0.4.2) (2022-09-01)

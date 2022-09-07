@@ -5,11 +5,11 @@ import zmq.devices
 
 from easypubsub.logging import getLogger
 
-_logger = getLogger("EasyPubSub.Proxy")
+_logger = getLogger("easypubsub.Proxy")
 
 
 class Proxy:
-    """The EasyPubSub Proxy acts as an intermediary between Publishers and Subscribers.
+    """The easypubsub Proxy acts as an intermediary between Publishers and Subscribers.
 
     Attributes:
         publishers_address (str): The address that publisher will use to connect to the Proxy.
