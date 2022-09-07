@@ -7,9 +7,9 @@
 [![Codacy Code Quality](https://app.codacy.com/project/badge/Grade/80f24926df804a108a568ca640352bd8)](https://www.codacy.com/gh/matpompili/easypubsub/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=matpompili/easypubsub&amp;utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/80f24926df804a108a568ca640352bd8)](https://www.codacy.com/gh/matpompili/easypubsub/dashboard?utm_source=github.com&utm_medium=referral&utm_content=matpompili/easypubsub&utm_campaign=Badge_Coverage)
 
-**easypubsub** is a simple wrapper around [PyZMQ](https://pyzmq.readthedocs.io/en/latest/) that provides an easy interface to the *PubSub* (Publish-Subscribe) functionality of [ZeroMQ](https://zeromq.org/). 
+`easypubsub` is a simple wrapper around [PyZMQ](https://pyzmq.readthedocs.io/en/latest/) that provides an easy interface to the *PubSub* (Publish-Subscribe) functionality of [ZeroMQ](https://zeromq.org/). 
 
-In PubSub, a *publisher* publishes a message to a *topic* and a *subscriber* subscribes to that topic and receives the message. In easypubsub, publishers and subscribers connect to each other via a *proxy*, which acts as intermediary between them.
+In PubSub, a *publisher* publishes a message to a *topic* and a *subscriber* subscribes to that topic and receives the message. In `easypubsub`, publishers and subscribers connect to each other via a *proxy*, which acts as intermediary between them.
 For more information regarding *PubSub*, see [Wikipedia](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern).
 
 ## Security warning
@@ -22,7 +22,7 @@ Only use `easypubsub` on your local machine, or behind a firewall that is config
 
 ## Get started
 
-easypubsub can be installed via `pip`:
+`easypubsub` can be installed via `pip`:
 
 ```bash
 pip install easypubsub
