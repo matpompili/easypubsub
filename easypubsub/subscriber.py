@@ -7,7 +7,7 @@ from easypubsub.logging import getLogger
 
 
 class Subscriber:
-    """The EasyPubSub Subscriber provides an interface to subscribe to one or more topics.
+    """The easypubsub Subscriber provides an interface to subscribe to one or more topics.
 
     Attributes:
         name (str): The name of the subscriber. This is used for logging purposes.
@@ -43,7 +43,7 @@ class Subscriber:
         else:
             self.topics = [topic.encode("utf-8") for topic in topics]
 
-        self._logger = getLogger(f"EasyPubSub.Subscriber({name})")
+        self._logger = getLogger(f"easypubsub.Subscriber({name})")
 
         self._connect()
 
