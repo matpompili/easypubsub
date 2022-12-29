@@ -2,7 +2,13 @@
 
 ## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
-[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.2...main)
+[Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.3...main)
+
+## [v0.4.3](https://github.com/matpompili/easypubsub/tree/main) (2022-12-29)
+
+-   Update `pyzmq` requirement to allow for `>=24.0`.
+
+[Full v0.4.3 Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.2...v0.4.3)
 
 ## [v0.4.2](https://github.com/matpompili/easypubsub/tree/v0.4.2) (2022-09-01)
 
