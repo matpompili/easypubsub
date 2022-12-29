@@ -17,7 +17,7 @@ project_urls = {
 
 setup(
     name="easypubsub",
-    version="0.4.3-beta.0",
+    version="0.4.3",
     packages=["easypubsub"],
     author="Matteo Pompili",
     python_requires=">=3.8",
