@@ -1,5 +1,5 @@
 alabaster==0.7.12
-attrs==22.1.0; python_version >= '3.5'
+attrs==22.2.0; python_version >= '3.5'
 babel==2.10.3; python_version >= '3.6'
 black==22.8.0
 build==0.8.0
