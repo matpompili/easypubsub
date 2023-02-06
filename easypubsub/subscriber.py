@@ -31,7 +31,6 @@ class Subscriber:
         topics: Union[str, List[str]] = "",
         receive_timeout: float = 0.1,
     ) -> None:
-
         self.name = name
         self.subscribers_address = proxy_subscribers_address
         self.receive_timeout_ms = round(receive_timeout * 1000)
