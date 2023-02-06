@@ -2,6 +2,8 @@
 
 ## [Unreleased](https://github.com/matpompili/easypubsub/tree/main)
 
+- Update `black` to make tests pass.
+
 [Full Unreleased Changelog](https://github.com/matpompili/easypubsub/compare/v0.4.3...main)
 
 ## [v0.4.3](https://github.com/matpompili/easypubsub/tree/main) (2022-12-29)
